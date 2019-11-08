@@ -1,0 +1,87 @@
+// Sidebar Styles
+.sidebar {
+  .sidebar-title {
+    padding: 10px;
+    background-color: $light-blue;
+  }
+  .sidebar-article {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    &.cuisines-list-article {
+      display: block;
+    }
+    img {
+      cursor: pointer;
+      border: $light-blue 1.5px solid;
+    }
+    p {
+      cursor: pointer;
+      text-transform: uppercase;
+      line-height: 1.2em;
+      font-size: 1.2em;
+      margin-left: 10px;
+      font-weight: 300;
+    }
+  }
+
+  .sidebar1 {
+    margin-bottom: 10px;
+    .sidebar-article:nth-of-type(2n + 1) {
+      background-color: $light-grey;
+    }
+    .sidebar-article:nth-of-type(2n) {
+      background-color: $very-light-grey;
+    }
+  }
+  .sidebar2 {
+    .sidebar-article {
+      background-color: $very-light-grey;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      @media (min-width: $phoneMedium){
+        display: grid;
+        grid-template-columns: 135px 135px 1fr;
+      }
+      @media (min-width: $tabletLandscape) {
+        display: block;
+      }
+    }
+
+    li {
+      cursor: pointer;
+      font-weight: 300;
+      line-height: 1.9em;
+      &:nth-child(odd){
+        grid-column: 1;
+      }
+      &:nth-child(even) {
+        grid-column: 2;
+      }
+      @media (min-width: $phoneMedium) {
+        &:first-child {
+          grid-column: 1;
+        }
+        &:nth-child(2) {
+          grid-column: 2;
+        }
+        &:nth-child(3n+4){
+          grid-column: 1;
+        }
+        &:nth-child(3n+5){
+          grid-column: 2;
+        }
+        &:nth-child(3n){
+          grid-column: 3;
+        }
+      }
+      @media (min-width: $tabletLandscape) {
+        width: auto;
+      }
+    }
+  }
+   
+}

@@ -1,0 +1,11 @@
+// Footer Styles
+footer {
+  background-color: $dark-blue;
+  .footer-wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+}

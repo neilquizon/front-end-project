@@ -1,0 +1,79 @@
+// Typography Styles
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
+// This import is added on html <head>
+
+// font-family: 'Roboto Condensed', sans-serif;
+// font-weight: bold;
+// font-weight: regular;
+// font-weight: light;
+
+$roboto: "Roboto Condensed", sans-serif;
+* {
+  font-family: $roboto;
+}
+h1 {
+  font-weight: 400;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: $light-blue;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+p {
+  font-weight: regular;
+  font-size: 1em;
+}
+h4 {
+  font-weight: 400;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  color: $light-blue;
+}
+h5 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: white;
+}
+
+header nav a {
+  font-weight: 400;
+}
+
+.section-article {
+  p {
+    font-weight: 300;
+  }
+  a {
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+header {
+  .nav-mobile {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $tabletLandscape){
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: $phoneLandscape) {
+  h1 {
+    font-size: 3em;
+  }
+
+  // h2 {
+  //   font-size: 2em;
+  // }
+}

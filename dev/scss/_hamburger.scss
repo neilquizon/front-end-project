@@ -1,0 +1,20 @@
+.hamburger {
+    display: block;
+    align-self: center;
+    padding: 5px;
+  
+    .line {
+      width: 35px;
+      height: 6px;
+      background: $dark-blue;
+      margin: 5px;
+      border-radius: 10px;
+    }
+    cursor: pointer;
+  }
+  .hamburger:hover {
+    .line {
+      background: $light-blue;
+    }
+  }
+  

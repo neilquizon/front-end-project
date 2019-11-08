@@ -1,0 +1,151 @@
+// Header Styles
+
+// Header max-width and background-color bleeding to the side.
+header {
+  background-color: $very-light-grey;
+  max-width: 1020px;
+  margin: 0 auto;
+  position: relative;
+}
+header::after,
+header::before {
+  content: "";
+  position: absolute;
+  /* fill vertically */
+  top: 0;
+  bottom: 0;
+  width: 9600px;
+  right: 100%;
+  background: $very-light-grey;
+}
+
+header::after {
+  width: 9600px;
+  left: 100%;
+  /* not browswer prefixed */
+  background: $very-light-grey;
+}
+
+// Header Contents Styles
+header {
+  .header-desktop {
+    display: none;
+  }
+
+  //  Mobile Styles
+  .header-mobile {
+    [alt="logo-large"] {
+      display: none;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      padding-left: 10px;
+    }
+  }
+
+  // Responsive Styles
+
+  @media (min-width: 450px) {
+    .header-mobile {
+      [alt="logo-small"] {
+        display: none;
+      }
+      [alt="logo-large"] {
+        display: block;
+      }
+      .logo {
+        width: 70%;
+      }
+    }
+  }
+
+  @media (min-width: 500px) {
+    .header-mobile,
+    .social-icons {
+      display: none;
+    }
+
+    .header-desktop {
+      display: block;
+    }
+    .nav-desktop form {
+      display: none;
+    }
+
+    .header-desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        width: 55%;
+        margin-left: 20px;
+      }
+      form {
+        width: 30%;
+        margin: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    .header-desktop {
+      .logo {
+        width: 43%;
+        margin: 20px;
+      }
+      form {
+        width: 27%;
+        margin: 20px;
+        margin-right: 0;
+      }
+      .social-icons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 20px 20px 0;
+
+        a {
+          color: $light-blue;
+          display: inline-block;
+          padding-right: 20px;
+          font-size: 25px;
+          transition: transform 0.3s ease;
+        }
+        a:last-child {
+          padding-right: 0;
+        }
+        a:hover,
+        a:focus,
+        a:active {
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tabletLandscape) {
+    .header-desktop {
+      form {
+        display: none;
+      }
+      .nav-desktop form {
+        display: flex;
+        margin: 0;
+      }
+    }
+    .header-desktop {
+      .logo {
+        margin-left: 30px;
+      }
+      .social-icons {
+        margin-right: 30px;
+      }
+    }
+  }
+}
